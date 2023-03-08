@@ -5,7 +5,7 @@ class AddContacts extends React.Component {
       email:""
      };
      add = (e) =>{
-      e.preventDefault();
+     e.preventDefault();
       if(this.state.name==="" || this.state.email===""){
         alert("All the fields are mandetory");
         return;
@@ -16,7 +16,7 @@ class AddContacts extends React.Component {
 
     render() {
       return (
-        <div className="ui main">
+        <div  style={{ marginTop :"50px " }} className="ui main">
             <h2>Add Contacts</h2>
             <form className="ui form" onSubmit={this.add}>
                 <div className="field">

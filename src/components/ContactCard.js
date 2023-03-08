@@ -8,9 +8,10 @@ const ContactCard = (props) => {
                 <div className="header">{name}</div>
                 <div>{email}</div>
             </div>
-            <i className="trash alternate outline icon right floated content"
-            style={{color: "red" , marginTop :"7px " }}></i>
+            <i className="right floated content trash alternate outline icon"
+            style={{color: "red" , marginTop :"7px ",cursor:'pointer' }}
+            onClick={()=>props.clickHandler(id)}></i>
         </div> 
-    )
+    )  
 }
 export default ContactCard;
