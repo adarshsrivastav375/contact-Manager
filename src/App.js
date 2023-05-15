@@ -11,7 +11,7 @@ import Header from './components/Header'
  
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/contacts",
     element:<ContactList/>,
   },
   {
