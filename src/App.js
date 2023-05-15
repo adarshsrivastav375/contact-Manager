@@ -1,5 +1,6 @@
 import './App.css';
 import AddContacts from './components/AddContacts';
+import UpdateContacts from './components/UpdateContact';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     path: "/add",
     element: <AddContacts/>,
   },
+  {
+    path:'/:id/update',
+    element:<UpdateContacts/>
+  }
   
 ]);
 

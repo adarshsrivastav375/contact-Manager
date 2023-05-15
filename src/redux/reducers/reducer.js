@@ -11,7 +11,9 @@ const contactReducer = createSlice({
     //here we will write our reducer
     //Adding todos
     addContact: (state, action) => {
-      state.data.push(action.payload);
+
+      let obj = action.payload;
+      state.data.push(obj);
       return state;
     },
     //remove todos
@@ -21,28 +23,11 @@ const contactReducer = createSlice({
     },
     //update todos
     updateContact: (state, action) => {
-      return state.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return {
-            ...todo,
-            item: action.payload.item,
-          };
-        }
-        return todo;
-      });
+      console.log(action);
+      state.data.splice(action.payload.index, 1, action.payload.data);
+      return state;
     },
-    //completed
-    // completeTodos: (state, action) => {
-    //   return state.map((todo) => {
-    //     if (todo.id === action.payload) {
-    //       return {
-    //         ...todo,
-    //         completed: true,
-    //       };
-    //     }
-    //     return todo;
-    //   });
-    // },
+    
 },
 });
 

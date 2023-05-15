@@ -1,10 +1,12 @@
 import user from "../images/user.png"
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { removeContact, updateContact } from "../redux/reducers/reducer";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactCard = (props) => {
     const {id, name, mobile} = props.contact;
     const dispatch= useDispatch();
+    const navigate = useNavigate();
     // const deleteContact=(id)=>{
     //     dispatch(removeContact(id))
 
@@ -16,9 +18,10 @@ const ContactCard = (props) => {
                 <div>+91{mobile}</div>
             </div>
             <div className='item right floated content'>
-            <i className="right floated content edit alternate outline icon"
-            style={{color: "blue",cursor:'pointer'}}
-            onClick={()=> dispatch(updateContact(id))}></i>
+            <Link to={`/${id}/update`}>  <i className="right floated content edit alternate outline icon"
+            style={{color: "blue",cursor:'pointer'}} 
+            onClick={() => navigate.push(`/${id}/update`)}></i></Link>
+            
             <i className=" trash alternate outline icon"
             style={{color: "red",cursor:'pointer' }}
             onClick={()=> dispatch(removeContact(id))}></i>
