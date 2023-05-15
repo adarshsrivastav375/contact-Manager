@@ -15,11 +15,11 @@ const router = createBrowserRouter([
     element:<ContactList/>,
   },
   {
-    path: "/add",
+    path: "/contacts/add",
     element: <AddContacts/>,
   },
   {
-    path:'/:id/update',
+    path:'/contacts/:id/update',
     element:<UpdateContacts/>
   }
   
